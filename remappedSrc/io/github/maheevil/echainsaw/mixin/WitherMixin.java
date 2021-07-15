@@ -65,10 +65,10 @@ public class WitherMixin extends HostileEntity {
     @ModifyVariable(
             method = "mobTick",
             at = @At(value = "STORE"),
-            name = "destructionType"
+            index = 2
     )
     private Explosion.DestructionType destructionType(Explosion.DestructionType destructionType){
-        if(!this.world.getGameRules().getBoolean(EChainsawMod.WITHER_INITIAL_EXPLOSION_GRIEFING))
+        if(this.world.getGameRules().getBoolean(EChainsawMod.WITHER_INITIAL_EXPLOSION_GRIEFING))
             return Explosion.DestructionType.NONE;
         return destructionType;
     }
