@@ -3,11 +3,7 @@ package io.github.maheevil.echainsaw;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
-import net.minecraft.server.command.CommandManager;
 import net.minecraft.world.GameRules;
-import net.minecraft.world.World;
-
-import java.util.Scanner;
 
 public class EChainsawMod implements ModInitializer {
 	//public static boolean hj;
@@ -15,7 +11,11 @@ public class EChainsawMod implements ModInitializer {
 	//@Override
 	public static final GameRules.Key<GameRules.BooleanRule>
 	CREEPER_GRIEFING = register("creeper"),
-	WITHER_SKULL_ENTITY_GRIEFING = register("wither_skull_entity");
+	WITHER_SKULL_ENTITY_GRIEFING = register("wither_skull_entity"),
+	WITHER_COLLISION_GRIEFING = register("wither_collision_griefing"),
+	WITHER_INITIAL_EXPLOSION_GRIEFING = register("wither_initial_explosion_griefing"),
+	ENDERDRAGON_MOB_GRIEFING = register("enderdragon_mob_griefing");
+
 
 
 	private static GameRules.Key<GameRules.BooleanRule> register(String id) {
