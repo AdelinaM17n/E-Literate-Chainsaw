@@ -14,16 +14,18 @@ public class EChainsawMod implements ModInitializer {
 	WITHER_SKULL_ENTITY_GRIEFING = register("wither_skull_entity"),
 	WITHER_COLLISION_GRIEFING = register("wither_collision_griefing"),
 	WITHER_INITIAL_EXPLOSION_GRIEFING = register("wither_initial_explosion_griefing"),
-	ENDERDRAGON_MOB_GRIEFING = register("enderdragon_mob_griefing");
-
-
+	ENDERDRAGON_MOB_GRIEFING = register("enderdragon_mob_griefing"),
+	ZOMBIE_MOB_GRIEFING = register("zomie_mob_griefing"),
+	DROWNED_MOB_GRIEFING = register("water_zomie"),
+	ZOMBIFIED_PIGLIN_MOB_GRIEFING = register("zombified_piglin_mob_griefing"),
+	HUSK_MOB_GRIEFING = register("husk_mob_griefing"),
+	ZOMBIE_VILLAGER_MOB_GRIEFING = register("zombie_villager_mob_griefing"),
+	SKELENTON_MOB_GRIEFING = register("skelenton_mob_griefing"),
+	STRAY_MOB_GRIEFING = register("stray_mob_griefing");
 
 	private static GameRules.Key<GameRules.BooleanRule> register(String id) {
 		return GameRuleRegistry.register(id, GameRules.Category.MOBS, GameRuleFactory.createBooleanRule(true));
 	}
-
-
-
 
 	public void onInitialize() {
 
