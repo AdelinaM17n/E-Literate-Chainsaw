@@ -3,7 +3,7 @@
   "minVersion": "0.8",
   "package": "io.github.maheevil.echainsaw.mixin",
   "compatibilityLevel": "JAVA_16",
-  "mixins": ["WitherSkullProjectileMixin","CreeperMixin","WitherMixin"
+  "mixins": ["WitherSkullProjectileMixin","CreeperMixin","WitherMixin","EnderDragonMixin"
   ],
   "client": [
   ],
