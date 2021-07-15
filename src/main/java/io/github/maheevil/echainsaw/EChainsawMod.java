@@ -14,11 +14,12 @@ public class EChainsawMod implements ModInitializer {
 	//public int h = 1;
 	//@Override
 	public static final GameRules.Key<GameRules.BooleanRule>
-	CREEPER_GRIEFING = register("creeper");
+	CREEPER_GRIEFING = register("creeper"),
+	WITHER_SKULL_ENTITY_GRIEFING = register("wither_skull_entity");
 
 
-	private static GameRules.Key<GameRules.BooleanRule> register(String creeper) {
-		return GameRuleRegistry.register(creeper, GameRules.Category.MOBS, GameRuleFactory.createBooleanRule(true));
+	private static GameRules.Key<GameRules.BooleanRule> register(String id) {
+		return GameRuleRegistry.register(id, GameRules.Category.MOBS, GameRuleFactory.createBooleanRule(true));
 	}
 
 
