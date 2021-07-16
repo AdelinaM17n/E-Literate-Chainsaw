@@ -52,7 +52,8 @@ public class WitherMixin extends HostileEntity {
             method = "mobTick",
             at = @At(value = "STORE"),
             //index = 18,
-            name = "blockState"
+            //name = "blockState"
+            ordinal = 0
     )
     private BlockState blockState(BlockState blockState){
         if(!this.world.getGameRules().getBoolean(EChainsawMod.WITHER_COLLISION_GRIEFING))
@@ -65,7 +66,8 @@ public class WitherMixin extends HostileEntity {
     @ModifyVariable(
             method = "mobTick",
             at = @At(value = "STORE"),
-            name = "destructionType"
+            //name = "destructionType"
+            ordinal = 0
     )
     private Explosion.DestructionType destructionType(Explosion.DestructionType destructionType){
         if(!this.world.getGameRules().getBoolean(EChainsawMod.WITHER_INITIAL_EXPLOSION_GRIEFING))

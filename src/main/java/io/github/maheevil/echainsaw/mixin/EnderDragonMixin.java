@@ -22,7 +22,8 @@ public class EnderDragonMixin extends MobEntity {
     @ModifyVariable(
             method = "destroyBlocks",
             at = @At("STORE"),
-            name = "blockState"
+            //name = "blockState"
+            ordinal = 0
     )
     private BlockState blockState(BlockState blockState){
         if(!this.world.getGameRules().getBoolean(EChainsawMod.ENDERDRAGON_MOB_GRIEFING))

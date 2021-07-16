@@ -39,7 +39,7 @@ public class CreeperMixin extends HostileEntity {
 	)
 	private Explosion.DestructionType destructionType(Explosion.DestructionType destructionType){
 		if(!this.world.getGameRules().getBoolean(EChainsawMod.CREEPER_GRIEFING))
-			return Explosion.DestructionType.BREAK;
+			return Explosion.DestructionType.NONE;
 		return destructionType;
 	}
 
