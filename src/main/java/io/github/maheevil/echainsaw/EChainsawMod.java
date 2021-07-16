@@ -21,7 +21,9 @@ public class EChainsawMod implements ModInitializer {
 	HUSK_MOB_GRIEFING = register("husk_mob_griefing"),
 	ZOMBIE_VILLAGER_MOB_GRIEFING = register("zombie_villager_mob_griefing"),
 	SKELENTON_MOB_GRIEFING = register("skelenton_mob_griefing"),
-	STRAY_MOB_GRIEFING = register("stray_mob_griefing");
+	STRAY_MOB_GRIEFING = register("stray_mob_griefing"),
+	GHAST_MOB_GRIEFING = register("ghast_mob_griefing"),
+	BLAZE_MOB_GRIEFING = register("blaze_mob_grieifing");
 
 	private static GameRules.Key<GameRules.BooleanRule> register(String id) {
 		return GameRuleRegistry.register(id, GameRules.Category.MOBS, GameRuleFactory.createBooleanRule(true));
