@@ -9,6 +9,7 @@ public class EChainsawMod implements ModInitializer {
 	//public static boolean hj;
 	//public int h = 1;
 	//@Override
+
 	public static final GameRules.Key<GameRules.BooleanRule>
 	CREEPER_GRIEFING = register("creeper"),
 	WITHER_SKULL_ENTITY_GRIEFING = register("wither_skull_entity"),
@@ -23,11 +24,18 @@ public class EChainsawMod implements ModInitializer {
 	SKELENTON_MOB_GRIEFING = register("skelenton_mob_griefing"),
 	STRAY_MOB_GRIEFING = register("stray_mob_griefing"),
 	GHAST_MOB_GRIEFING = register("ghast_mob_griefing"),
-	BLAZE_MOB_GRIEFING = register("blaze_mob_grieifing");
+	BLAZE_MOB_GRIEFING = register("blaze_mob_grieifing"),
+	VILLAGER_MOB_GRIEFING = register("villager_mob_grieifng"),
+	SHEEP_MOB_GRIEFING = register("sheep_mob_griefing"),
+	EVOKER_MOB_GRIEFING = register("evoker_mob_griefing"),
+	RAVAGER_MOB_GRIEFING = register("raver_mob_griefing");
+	//HOSTILE_MOB_ITEMPICKUP = register("hostile_mob_item_pickup"),
+	//BATTERING_ITEM_PICKUP = register("battering_item_pickup");
 
 	private static GameRules.Key<GameRules.BooleanRule> register(String id) {
 		return GameRuleRegistry.register(id, GameRules.Category.MOBS, GameRuleFactory.createBooleanRule(true));
 	}
+
 
 	public void onInitialize() {
 

@@ -4,7 +4,8 @@
   "package": "io.github.maheevil.echainsaw.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": ["CreeperMixin","WitherMixin","WitherSkullProjectileMixin","EnderDragonMixin",
-    "StepAndDestroyBlockMixin","FireballEntityMixin","SmallFireballEntityMixin"
+    "StepAndDestroyBlockMixin","FireballEntityMixin","SmallFireballEntityMixin","FarmerVillagerTaskMixin",
+    "EatGrassGoalMixin","RavagerEntityMixin"
   ],
   "client": [
   ],
