@@ -5,7 +5,7 @@
   "compatibilityLevel": "JAVA_16",
   "mixins": ["CreeperMixin","WitherMixin","WitherSkullProjectileMixin","EnderDragonMixin",
     "StepAndDestroyBlockMixin","FireballEntityMixin","SmallFireballEntityMixin","FarmerVillagerTaskMixin",
-    "EatGrassGoalMixin","RavagerEntityMixin"
+    "EatGrassGoalMixin","RavagerEntityMixin","WololoGoalMixin"
   ],
   "client": [
   ],
