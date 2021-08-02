@@ -7,11 +7,13 @@ import net.minecraft.entity.mob.BlazeEntity;
 import net.minecraft.entity.projectile.AbstractFireballEntity;
 import net.minecraft.entity.projectile.SmallFireballEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
+import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(SmallFireballEntity.class)
 public class SmallFireballEntityMixin extends AbstractFireballEntity {
@@ -21,15 +23,20 @@ public class SmallFireballEntityMixin extends AbstractFireballEntity {
         super(entityType, world);
     }
 
-    @ModifyVariable(
+    @Redirect(
             method = "onBlockHit",
-            at = @At("STORE"),
-            ordinal = 0
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/world/GameRules;getBoolean(Lnet/minecraft/world/GameRules$Key;)Z", ordinal = 0)
     )
-    private BlockPos blockPos(BlockPos blockPos){
+    private boolean redirectMobGriefing(GameRules gameRules, GameRules.Key<GameRules.BooleanRule> rule){
+        if(!this.world.getGameRules().getBoolean(EChainsawMod.BLAZE_MOB_GRIEFING))
+            return false;
+        else
+            return this.world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING);
+    }
+    /*private BlockPos blockPos(BlockPos blockPos){
         if(this.getOwner() instanceof BlazeEntity
                 && !this.world.getGameRules().getBoolean(EChainsawMod.BLAZE_MOB_GRIEFING))
             return blockPos.withY(258);
         return blockPos;
-    }
+    }*/
 }

@@ -31,6 +31,7 @@ public class EChainsawMod implements ModInitializer {
 	EVOKER_MOB_GRIEFING = register("evoker_mob_griefing"),
 	RAVAGER_MOB_GRIEFING = register("raver_mob_griefing"),
 	SNOW_GOLEM_MOB_GRIEFING = register("snow_golem_mob_griefing"),
+	FARM_LAND_ENTITY_COLLISION_GRIEFING = register("farm_land_entity_collision_griefing"),
 	HOSTILE_MOB_ITEMPICKUP = register("hostile_mob_item_pickup"),
 	PASSIVE_MOB_ITEM_PICKUP = register("passive_mob_item_pickup"),
 	PIGLIN_ITEM_PICKUP = register("piglin_item_pickup");

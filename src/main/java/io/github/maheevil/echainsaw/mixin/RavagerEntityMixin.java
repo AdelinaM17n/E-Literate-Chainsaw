@@ -8,12 +8,14 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.mob.RavagerEntity;
 import net.minecraft.entity.raid.RaiderEntity;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
+import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(RavagerEntity.class)
 public class RavagerEntityMixin extends RaiderEntity {
@@ -21,16 +23,17 @@ public class RavagerEntityMixin extends RaiderEntity {
         super(entityType, world);
     }
 
-    @ModifyVariable(
+    @Redirect(
             method = "tickMovement",
-            at = @At("STORE"),
-            ordinal = 0
+            at = @At(value = "INVOKE",target = "Lnet/minecraft/world/GameRules;getBoolean(Lnet/minecraft/world/GameRules$Key;)Z", ordinal = 0)
     )
-    private BlockState blockState(BlockState blockState){
+    private boolean redirectMobGriefing(GameRules gameRules, GameRules.Key<GameRules.BooleanRule> rule){
         if(!this.world.getGameRules().getBoolean(EChainsawMod.RAVAGER_MOB_GRIEFING))
-            return Blocks.BEDROCK.getDefaultState();
-        return blockState;
+            return false;
+        else
+            return this.world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING);
     }
+
 
     @Shadow
     public void addBonusForWave(int wave, boolean unused) {

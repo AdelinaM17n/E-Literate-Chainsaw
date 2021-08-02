@@ -13,6 +13,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
+import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
@@ -23,16 +24,15 @@ public class FarmLandEntityColisionMixin extends Block {
     }
 
 
-    @Inject(
+
+    @Redirect(
             method = "onLandedUpon",
-            at = @At("HEAD"),
-            cancellable = true
+            at = @At(value = "INVOKE",target = "Lnet/minecraft/world/GameRules;getBoolean(Lnet/minecraft/world/GameRules$Key;)Z", ordinal = 0)
     )
-    public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float fallDistance, CallbackInfo ci){
-        if(!world.getGameRules().getBoolean(EChainsawMod.STRAY_MOB_GRIEFING)){
-            ci.cancel();
-        }
+    private boolean redirectMobGriefing(GameRules gameRules, GameRules.Key<GameRules.BooleanRule> rule){
+        if(!gameRules.getBoolean(EChainsawMod.FARM_LAND_ENTITY_COLLISION_GRIEFING))
+            return false;
+        else
+            return gameRules.getBoolean(GameRules.DO_MOB_GRIEFING);
     }
-
-
 }
