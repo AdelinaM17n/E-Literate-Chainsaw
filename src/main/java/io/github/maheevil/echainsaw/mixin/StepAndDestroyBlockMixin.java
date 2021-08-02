@@ -38,28 +38,8 @@ public class StepAndDestroyBlockMixin extends MoveToTargetPosGoal {
             cancellable = true
     )
     private void canStart(CallbackInfoReturnable<Boolean> cir){
-        if(stepAndDestroyMob instanceof ZombieEntity
-                && !this.stepAndDestroyMob.world.getGameRules().getBoolean(EChainsawMod.ZOMBIE_MOB_GRIEFING)){
-            cir.setReturnValue(false);
-        }else if(stepAndDestroyMob instanceof ZombifiedPiglinEntity
-                && !this.stepAndDestroyMob.world.getGameRules().getBoolean(EChainsawMod.ZOMBIFIED_PIGLIN_MOB_GRIEFING)){
-            cir.setReturnValue(false);
-        }else if(stepAndDestroyMob instanceof ZombieVillagerEntity
-                && !this.stepAndDestroyMob.world.getGameRules().getBoolean(EChainsawMod.ZOMBIE_VILLAGER_MOB_GRIEFING)){
-            cir.setReturnValue(false);
-        }else if(stepAndDestroyMob instanceof DrownedEntity
-                && !this.stepAndDestroyMob.world.getGameRules().getBoolean(EChainsawMod.DROWNED_MOB_GRIEFING)){
-            cir.setReturnValue(false);
-        }else if(stepAndDestroyMob instanceof SkeletonEntity
-                && !this.stepAndDestroyMob.world.getGameRules().getBoolean(EChainsawMod.SKELENTON_MOB_GRIEFING)){
-            cir.setReturnValue(false);
-        }else if(stepAndDestroyMob instanceof HuskEntity
-                && !this.stepAndDestroyMob.world.getGameRules().getBoolean(EChainsawMod.HUSK_MOB_GRIEFING)){
-            cir.setReturnValue(false);
-        }else if(stepAndDestroyMob instanceof StrayEntity
-                && !this.stepAndDestroyMob.world.getGameRules().getBoolean(EChainsawMod.STRAY_MOB_GRIEFING)){
-            cir.setReturnValue(false);
-        }
+      if(this.stepAndDestroyMob.world.getGameRules().getBoolean(EChainsawMod.UNDEAD_MOBS_TURTLE_EGG_GRIEFING))
+          cir.setReturnValue(false);
     }
 
     //@Override

@@ -25,7 +25,7 @@ public class WitherSkullProjectileMixin extends ExplosiveProjectileEntity {
             index = 2
     )
     private Explosion.DestructionType destructionType(Explosion.DestructionType destructionType){
-        if(!this.world.getGameRules().getBoolean(EChainsawMod.WITHER_SKULL_ENTITY_GRIEFING))
+        if(!this.world.getGameRules().getBoolean(EChainsawMod.WITHER_MOB_DAMAGE))
             return Explosion.DestructionType.NONE;
         return destructionType;
     }

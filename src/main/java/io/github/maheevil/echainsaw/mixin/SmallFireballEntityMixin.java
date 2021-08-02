@@ -28,7 +28,7 @@ public class SmallFireballEntityMixin extends AbstractFireballEntity {
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/GameRules;getBoolean(Lnet/minecraft/world/GameRules$Key;)Z", ordinal = 0)
     )
     private boolean redirectMobGriefing(GameRules gameRules, GameRules.Key<GameRules.BooleanRule> rule){
-        if(!this.world.getGameRules().getBoolean(EChainsawMod.BLAZE_MOB_GRIEFING))
+        if(!this.world.getGameRules().getBoolean(EChainsawMod.HOSTILE_MOB_BLOCK_DAMAGE))
             return false;
         else
             return this.world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING);

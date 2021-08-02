@@ -43,17 +43,11 @@ public class WitherMixin extends HostileEntity {
             at = @At(value = "INVOKE",target = "Lnet/minecraft/world/GameRules;getBoolean(Lnet/minecraft/world/GameRules$Key;)Z", ordinal = 1)
     )
     private boolean redirectMobGriefing(GameRules gameRules, GameRules.Key<GameRules.BooleanRule> rule){
-        if(!this.world.getGameRules().getBoolean(EChainsawMod.WITHER_COLLISION_GRIEFING))
+        if(!this.world.getGameRules().getBoolean(EChainsawMod.WITHER_MOB_DAMAGE))
             return false;
         else
             return this.world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING);
     }
-    /*private BlockState blockState(BlockState blockState){
-        if(!this.world.getGameRules().getBoolean(EChainsawMod.WITHER_COLLISION_GRIEFING))
-            return Blocks.BEDROCK.getDefaultState();
-        return blockState;
-    }*/
-
 
 
     @ModifyVariable(
@@ -63,7 +57,7 @@ public class WitherMixin extends HostileEntity {
             ordinal = 0
     )
     private Explosion.DestructionType destructionType(Explosion.DestructionType destructionType){
-        if(!this.world.getGameRules().getBoolean(EChainsawMod.WITHER_INITIAL_EXPLOSION_GRIEFING))
+        if(!this.world.getGameRules().getBoolean(EChainsawMod.WITHER_MOB_DAMAGE))
             return Explosion.DestructionType.NONE;
         return destructionType;
     }

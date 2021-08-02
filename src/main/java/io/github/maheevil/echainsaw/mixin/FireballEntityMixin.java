@@ -24,7 +24,7 @@ public class FireballEntityMixin extends AbstractFireballEntity {
             ordinal = 0
     )
     private boolean bl(boolean bl){
-        if(!this.world.getGameRules().getBoolean(EChainsawMod.GHAST_MOB_GRIEFING))
+        if(!this.world.getGameRules().getBoolean(EChainsawMod.HOSTILE_MOB_BLOCK_DAMAGE))
             return false;
         return bl;
 

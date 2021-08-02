@@ -27,7 +27,7 @@ public class FarmerVillagerTaskMixin extends Task<VillagerEntity> {
             cancellable = true
     )
     protected void shouldRun(ServerWorld serverWorld, VillagerEntity villagerEntity, CallbackInfoReturnable<Boolean> cir) {
-        if(!serverWorld.getGameRules().getBoolean(EChainsawMod.VILLAGER_MOB_GRIEFING)){
+        if(!serverWorld.getGameRules().getBoolean(EChainsawMod.MOB_CROP_HARVEST)){
             cir.setReturnValue(false);
         }
     }

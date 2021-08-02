@@ -32,7 +32,7 @@ public class WololoGoalMixin {
             cancellable = true
     )
     public void canStart(CallbackInfoReturnable<Boolean> cir){
-        if(!field_7268.world.getGameRules().getBoolean(EChainsawMod.EVOKER_MOB_GRIEFING))
+        if(!field_7268.world.getGameRules().getBoolean(EChainsawMod.MISC_MOB_GRIEFING))
             cir.setReturnValue(false);
     }
 
