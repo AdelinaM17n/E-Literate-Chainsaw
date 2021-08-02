@@ -27,40 +27,22 @@ public class EatGrassGoalMixin extends Goal {
 
     @Shadow @Final private MobEntity mob;
 
-    @Shadow @Final private World world;
+    //@Shadow @Final private World world;
 
     @Redirect(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/GameRules;getBoolean(Lnet/minecraft/world/GameRules$Key;)Z", ordinal = 0))
     private boolean redirectDoMobGriefing1(GameRules gameRules, GameRules.Key<GameRules.BooleanRule> rule) {
-        return false;
+        if(!mob.world.getGameRules().getBoolean(EChainsawMod.SHEEP_MOB_GRIEFING))
+            return false;
+        else
+            return mob.world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING);
     }
 
     @Redirect(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/GameRules;getBoolean(Lnet/minecraft/world/GameRules$Key;)Z", ordinal = 1))
     private boolean redirectDoMobGriefing(GameRules gameRules, GameRules.Key<GameRules.BooleanRule> rule) {
-        return false;
+        if(!mob.world.getGameRules().getBoolean(EChainsawMod.SHEEP_MOB_GRIEFING))
+            return false;
+        else
+            return mob.world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING);
     }
 
-
-    /*@ModifyVariable(
-            method = "tick",
-            at = @At("STORE"),
-            ordinal = 0
-    )
-    private BlockPos blockPos(BlockPos blockPos){
-        if(this.mob instanceof SheepEntity
-                && this.world.getGameRules().getBoolean(EChainsawMod.SHEEP_MOB_GRIEFING))
-            return blockPos.withY(257);
-        return blockPos;
-    }
-
-    @ModifyVariable(
-            method = "tick",
-            at = @At("STORE"),
-            ordinal = 1
-    )
-    private BlockPos blockPos2(BlockPos blockPos2){
-        if(this.mob instanceof SheepEntity
-                && this.world.getGameRules().getBoolean(EChainsawMod.SHEEP_MOB_GRIEFING))
-            return blockPos2.withY(257);
-        return blockPos2;
-    }*/
 }
