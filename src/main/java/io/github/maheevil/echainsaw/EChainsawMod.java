@@ -16,6 +16,7 @@ public class EChainsawMod implements ModInitializer {
 	WITHER_COLLISION_GRIEFING = register("wither_collision_griefing"),
 	WITHER_INITIAL_EXPLOSION_GRIEFING = register("wither_initial_explosion_griefing"),
 	ENDERDRAGON_MOB_GRIEFING = register("enderdragon_mob_griefing"),
+	ENDERMAN_BLOCK_GRIEFING = register("enderman_mob_griefing"),
 	ZOMBIE_MOB_GRIEFING = register("zomie_mob_griefing"),
 	DROWNED_MOB_GRIEFING = register("water_zomie"),
 	ZOMBIFIED_PIGLIN_MOB_GRIEFING = register("zombified_piglin_mob_griefing"),
