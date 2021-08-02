@@ -6,7 +6,7 @@
   "mixins": ["CreeperMixin","WitherMixin","WitherSkullProjectileMixin","EnderDragonMixin",
     "StepAndDestroyBlockMixin","FireballEntityMixin","SmallFireballEntityMixin","FarmerVillagerTaskMixin",
     "EatGrassGoalMixin","RavagerEntityMixin","WololoGoalMixin","SnowGolemEntityMixin","PickUpBlockGoalMixin",
-    "PlaceBlockGoalMixin"
+    "PlaceBlockGoalMixin","FarmLandEntityColisionMixin"
   ],
   "client": [
   ],

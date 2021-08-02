@@ -30,9 +30,10 @@ public class EChainsawMod implements ModInitializer {
 	SHEEP_MOB_GRIEFING = register("sheep_mob_griefing"),
 	EVOKER_MOB_GRIEFING = register("evoker_mob_griefing"),
 	RAVAGER_MOB_GRIEFING = register("raver_mob_griefing"),
-	SNOW_GOLEM_MOB_GRIEFING = register("snow_golem_mob_griefing");
-	//HOSTILE_MOB_ITEMPICKUP = register("hostile_mob_item_pickup"),
-	//BATTERING_ITEM_PICKUP = register("battering_item_pickup");
+	SNOW_GOLEM_MOB_GRIEFING = register("snow_golem_mob_griefing"),
+	HOSTILE_MOB_ITEMPICKUP = register("hostile_mob_item_pickup"),
+	PASSIVE_MOB_ITEM_PICKUP = register("passive_mob_item_pickup"),
+	PIGLIN_ITEM_PICKUP = register("piglin_item_pickup");
 
 	private static GameRules.Key<GameRules.BooleanRule> register(String id) {
 		return GameRuleRegistry.register(id, GameRules.Category.MOBS, GameRuleFactory.createBooleanRule(true));
