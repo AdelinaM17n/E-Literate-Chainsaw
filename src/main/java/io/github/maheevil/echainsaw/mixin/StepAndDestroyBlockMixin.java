@@ -38,7 +38,7 @@ public class StepAndDestroyBlockMixin extends MoveToTargetPosGoal {
             cancellable = true
     )
     private void canStart(CallbackInfoReturnable<Boolean> cir){
-      if(this.stepAndDestroyMob.world.getGameRules().getBoolean(EChainsawMod.UNDEAD_MOBS_TURTLE_EGG_GRIEFING))
+      if(!this.stepAndDestroyMob.world.getGameRules().getBoolean(EChainsawMod.UNDEAD_MOBS_TURTLE_EGG_GRIEFING))
           cir.setReturnValue(false);
     }
 
