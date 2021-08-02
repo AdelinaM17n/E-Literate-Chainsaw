@@ -14,7 +14,7 @@ public class PlaceBlockGoalMixin {
     @Shadow @Final private EndermanEntity enderman;
 
     @Inject(
-            method = "canStart",
+            method = "Lnet/minecraft/entity/mob/EndermanEntity$PlaceBlockGoal;canStart()Z",
             at = @At("RETURN"),
             cancellable = true
     )

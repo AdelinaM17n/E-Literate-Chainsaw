@@ -15,7 +15,7 @@ public class EatCarrotCropGoalMixin {
     private RabbitEntity rabbit;
 
     @Redirect(
-            method = "canStart",
+            method = "Lnet/minecraft/entity/passive/RabbitEntity$EatCarrotCropGoal;canStart()Z",
             at = @At(value = "INVOKE",target = "Lnet/minecraft/world/GameRules;getBoolean(Lnet/minecraft/world/GameRules$Key;)Z", ordinal = 0)
     )
     private boolean redirectMobGriefing(GameRules gameRules, GameRules.Key<GameRules.BooleanRule> rule){

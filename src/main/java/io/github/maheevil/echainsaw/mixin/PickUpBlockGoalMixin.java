@@ -16,7 +16,7 @@ public class PickUpBlockGoalMixin {
     @Shadow @Final private EndermanEntity enderman;
 
     @Inject(
-            method = "canStart",
+            method = "Lnet/minecraft/entity/mob/EndermanEntity$PickUpBlockGoal;canStart()Z",
             at = @At("RETURN"),
             cancellable = true
     )
