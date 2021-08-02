@@ -16,6 +16,7 @@ public class EChainsawMod implements ModInitializer {
 	WITHER_COLLISION_GRIEFING = register("wither_collision_griefing"),
 	WITHER_INITIAL_EXPLOSION_GRIEFING = register("wither_initial_explosion_griefing"),
 	ENDERDRAGON_MOB_GRIEFING = register("enderdragon_mob_griefing"),
+	ENDERMAN_BLOCK_GRIEFING = register("enderman_mob_griefing"),
 	ZOMBIE_MOB_GRIEFING = register("zomie_mob_griefing"),
 	DROWNED_MOB_GRIEFING = register("water_zomie"),
 	ZOMBIFIED_PIGLIN_MOB_GRIEFING = register("zombified_piglin_mob_griefing"),
@@ -29,9 +30,11 @@ public class EChainsawMod implements ModInitializer {
 	SHEEP_MOB_GRIEFING = register("sheep_mob_griefing"),
 	EVOKER_MOB_GRIEFING = register("evoker_mob_griefing"),
 	RAVAGER_MOB_GRIEFING = register("raver_mob_griefing"),
-	SNOW_GOLEM_MOB_GRIEFING = register("snow_golem_mob_griefing");
-	//HOSTILE_MOB_ITEMPICKUP = register("hostile_mob_item_pickup"),
-	//BATTERING_ITEM_PICKUP = register("battering_item_pickup");
+	SNOW_GOLEM_MOB_GRIEFING = register("snow_golem_mob_griefing"),
+	FARM_LAND_ENTITY_COLLISION_GRIEFING = register("farm_land_entity_collision_griefing"),
+	HOSTILE_MOB_ITEMPICKUP = register("hostile_mob_item_pickup"),
+	PASSIVE_MOB_ITEM_PICKUP = register("passive_mob_item_pickup"),
+	PIGLIN_ITEM_PICKUP = register("piglin_item_pickup");
 
 	private static GameRules.Key<GameRules.BooleanRule> register(String id) {
 		return GameRuleRegistry.register(id, GameRules.Category.MOBS, GameRuleFactory.createBooleanRule(true));

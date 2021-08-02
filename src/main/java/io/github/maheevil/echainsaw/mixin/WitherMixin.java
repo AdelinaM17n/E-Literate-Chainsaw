@@ -32,34 +32,27 @@ import java.util.List;
 @Mixin(WitherEntity.class)
 public class WitherMixin extends HostileEntity {
 
+    @Shadow private int blockBreakingCooldown;
+
     protected WitherMixin(EntityType<? extends HostileEntity> entityType, World world) {
         super(entityType, world);
     }
 
-
-    /*@Inject(
-            method = "canDestroy",
-            at = @At("RETURN"),
-            cancellable = true
-    )
-    private static void canDestroy(BlockState block, CallbackInfoReturnable<Boolean> cir){
-        //if(aBoolean)
-        //18 index
-        cir.setReturnValue(false);
-    }*/
-
-    @ModifyVariable(
+    @Redirect(
             method = "mobTick",
-            at = @At(value = "STORE"),
-            //index = 18,
-            //name = "blockState"
-            ordinal = 0
+            at = @At(value = "INVOKE",target = "Lnet/minecraft/world/GameRules;getBoolean(Lnet/minecraft/world/GameRules$Key;)Z", ordinal = 1)
     )
-    private BlockState blockState(BlockState blockState){
+    private boolean redirectMobGriefing(GameRules gameRules, GameRules.Key<GameRules.BooleanRule> rule){
+        if(!this.world.getGameRules().getBoolean(EChainsawMod.WITHER_COLLISION_GRIEFING))
+            return false;
+        else
+            return this.world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING);
+    }
+    /*private BlockState blockState(BlockState blockState){
         if(!this.world.getGameRules().getBoolean(EChainsawMod.WITHER_COLLISION_GRIEFING))
             return Blocks.BEDROCK.getDefaultState();
         return blockState;
-    }
+    }*/
 
 
 
