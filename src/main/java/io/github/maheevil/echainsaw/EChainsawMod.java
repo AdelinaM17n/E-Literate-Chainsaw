@@ -6,9 +6,6 @@ import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
 import net.minecraft.world.GameRules;
 
 public class EChainsawMod implements ModInitializer {
-	//public static boolean hj;
-	//public int h = 1;
-	//@Override
 
 	public static final GameRules.Key<GameRules.BooleanRule>
 	ENDERDRAGON_MOB_GRIEFING = register("enderdragon_mob_griefing"),
@@ -20,6 +17,7 @@ public class EChainsawMod implements ModInitializer {
 	HOSTILE_MOB_BLOCK_DAMAGE = register("hostile_mob_block_damage"),
 	MOB_CROP_HARVEST = register("mob_crop_harvest"),
 	WITHER_MOB_DAMAGE = register("wither_mob_damage"),
+	CREEPER_MOB_GIREFING = register("creeper_mob_griefing"),
 	//HOSTILE_MOB_ITEMPICKUP = register("hostile_mob_item_pickup"),
 	//PASSIVE_MOB_ITEM_PICKUP = register("passive_mob_item_pickup"),
 	UNDEAD_MOBS_TURTLE_EGG_GRIEFING = register("undead_mob_turtle_egg_griefing"),
@@ -32,14 +30,6 @@ public class EChainsawMod implements ModInitializer {
 
 
 	public void onInitialize() {
-
-		/*System.out.println("Hello Fabric world!");
-		String h = new Scanner(System.in).nextLine();
-		if(h.equalsIgnoreCase("h")){
-			this.h = 3;
-			hj=true;
-		}
-		System.out.println(this.h);*/
 
 	}
 }

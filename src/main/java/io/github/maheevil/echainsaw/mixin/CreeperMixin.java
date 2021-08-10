@@ -38,7 +38,7 @@ public class CreeperMixin extends HostileEntity {
 			index = 1
 	)
 	private Explosion.DestructionType destructionType(Explosion.DestructionType destructionType){
-		if(!this.world.getGameRules().getBoolean(EChainsawMod.HOSTILE_MOB_BLOCK_DAMAGE))
+		if(!this.world.getGameRules().getBoolean(EChainsawMod.CREEPER_MOB_GIREFING))
 			return Explosion.DestructionType.NONE;
 		return destructionType;
 	}
