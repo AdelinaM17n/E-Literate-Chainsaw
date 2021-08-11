@@ -31,7 +31,7 @@ public class EatGrassGoalMixin extends Goal {
 
     @Redirect(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/GameRules;getBoolean(Lnet/minecraft/world/GameRules$Key;)Z", ordinal = 0))
     private boolean redirectDoMobGriefing1(GameRules gameRules, GameRules.Key<GameRules.BooleanRule> rule) {
-        if(!mob.world.getGameRules().getBoolean(EChainsawMod.SHEEP_MOB_GRIEFING))
+        if(!mob.world.getGameRules().getBoolean(EChainsawMod.PASSIVE_MOB_GRIEFING))
             return false;
         else
             return mob.world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING);
@@ -39,7 +39,7 @@ public class EatGrassGoalMixin extends Goal {
 
     @Redirect(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/GameRules;getBoolean(Lnet/minecraft/world/GameRules$Key;)Z", ordinal = 1))
     private boolean redirectDoMobGriefing(GameRules gameRules, GameRules.Key<GameRules.BooleanRule> rule) {
-        if(!mob.world.getGameRules().getBoolean(EChainsawMod.SHEEP_MOB_GRIEFING))
+        if(!mob.world.getGameRules().getBoolean(EChainsawMod.PASSIVE_MOB_GRIEFING))
             return false;
         else
             return mob.world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING);

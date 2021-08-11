@@ -23,7 +23,7 @@ public class SnowGolemEntityMixin extends GolemEntity {
             at = @At(value = "INVOKE",target = "Lnet/minecraft/world/GameRules;getBoolean(Lnet/minecraft/world/GameRules$Key;)Z",ordinal = 0)
     )
     private boolean redirectMobGriefing(GameRules gameRules, GameRules.Key<GameRules.BooleanRule> rule){
-        if(!this.world.getGameRules().getBoolean(EChainsawMod.SNOW_GOLEM_MOB_GRIEFING))
+        if(!this.world.getGameRules().getBoolean(EChainsawMod.PASSIVE_MOB_GRIEFING))
             return false;
         else
             return this.world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING);

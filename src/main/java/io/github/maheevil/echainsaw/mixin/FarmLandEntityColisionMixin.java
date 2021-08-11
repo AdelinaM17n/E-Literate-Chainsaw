@@ -23,14 +23,12 @@ public class FarmLandEntityColisionMixin extends Block {
         super(settings);
     }
 
-
-
     @Redirect(
             method = "onLandedUpon",
             at = @At(value = "INVOKE",target = "Lnet/minecraft/world/GameRules;getBoolean(Lnet/minecraft/world/GameRules$Key;)Z", ordinal = 0)
     )
     private boolean redirectMobGriefing(GameRules gameRules, GameRules.Key<GameRules.BooleanRule> rule){
-        if(!gameRules.getBoolean(EChainsawMod.FARM_LAND_ENTITY_COLLISION_GRIEFING))
+        if(!gameRules.getBoolean(EChainsawMod.MOB_ENTITY_COLLISION_BlOCK_GRIEFING))
             return false;
         else
             return gameRules.getBoolean(GameRules.DO_MOB_GRIEFING);
