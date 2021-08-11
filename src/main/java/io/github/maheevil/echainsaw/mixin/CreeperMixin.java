@@ -18,16 +18,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(CreeperEntity.class)
 public class CreeperMixin extends HostileEntity {
-	//private Explosion.DestructionType destructionType;
-	//@Shadow Explosion.DestructionType destructionType;
-
-
-	//@Inject(at = @At("HEAD"), method = "explode")
-	//public void explode(CallbackInfo ci){
-		//return;
-	//}
-	//@Shadow World world;
-
 	protected CreeperMixin(EntityType<? extends HostileEntity> entityType, World world) {
 		super(entityType, world);
 	}
